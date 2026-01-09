@@ -1,0 +1,55 @@
+header {
+  background-color: #ffc017;
+  border-bottom: solid 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem;
+}
+
+header img {
+  width: 200px;
+}
+
+body,
+button {
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-family: "Spectral", serif;
+}
+
+.header-btns-wrapper {
+  display: flex;
+  gap: 1em;
+}
+button.invisible-btn {
+  border: none;
+  background-color: #ffc017;
+}
+button.regular-btn {
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  margin-left: 1em;
+}
+
+.hidden-mobile {
+  visibility: hidden;
+}
+@media screen and (min-width: 576px) {
+  .hidden-mobile {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    padding-inline: 15em;
+  }
+}
