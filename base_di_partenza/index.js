@@ -1,0 +1,195 @@
+const trendingArticles = [
+  {
+    id: 1,
+    author: "Tom Cooper",
+    publication: null,
+    title: "Ukraine War, 23 October 2022",
+    date: "Oct 23, 2022",
+    readTime: "5 min",
+  },
+  {
+    id: 2,
+    author: "Arthur Hayes",
+    publication: "Entrepreneur's Handbook",
+    title: "Comeback",
+    date: "Oct 26, 2022",
+    readTime: "24 min",
+  },
+  {
+    id: 3,
+    author: "Tom Cooper",
+    publication: null,
+    title: "How I Learned to Love My Breasts Even Though One Is A Horcrux For Voldemort",
+    date: "Oct 26, 2022",
+    readTime: "2 min",
+  },
+  {
+    id: 4,
+    author: "Frank Mastropolo",
+    publication: "The Riffk",
+    title: "The Night Paul McCartney Donned a Disguise at Fillmore East",
+    date: "Oct 22, 2022",
+    readTime: "3 min",
+  },
+  {
+    id: 5,
+    author: "Frank Andrade",
+    publication: "Towards Data Science",
+    title: "5 Python Projects to Automate Your Life: From Beginner to Advanced",
+    date: "Oct 13, 2022",
+    readTime: "6 min",
+  },
+  {
+    id: 6,
+    author: "Wesley Smits",
+    publication: "JavaScript in Plain English",
+    title: "How To Make Visual Studio Code Look Amazing",
+    date: "Oct 20, 2022",
+    readTime: "7 min",
+  },
+];
+
+const featuredArticles = [
+  {
+    author: "Robert Roy Britt",
+    publication: null,
+    title: "How Old is Old?",
+    desc: "What we consider “old” changes dramatically with age, and our perspectives can be predictive of how well we age",
+    date: "Oct 27",
+    readTime: "5 min",
+    topic: "Aging",
+  },
+  {
+    author: "Taru Anniina Liikanen",
+    publication: null,
+    title: "Is Taylor Swift Allowed to Speak About Fat?",
+    desc: "Can you speak about your trauma if you don't look traumatized?",
+    date: "Oct 24",
+    readTime: "6 min",
+    topic: "Health",
+  },
+  {
+    author: "David Rodenas, Ph. D.",
+    publication: null,
+    title: "Don’t Screw Up, You Will Be Found Guilty",
+    desc: "Software Engineer, yours is the right to produce high-quality work at all times, also the liability.",
+    date: "Oct 15",
+    readTime: "5 min",
+    topic: "Software Engineering",
+  },
+  {
+    author: "Microsoft Design",
+    publication: null,
+    title: "Leave No Trace",
+    desc: "How product designers can break from the status quo and help our planet",
+    date: "Oct 25",
+    readTime: "11 min",
+    topic: "Sustainability",
+  },
+  {
+    author: "Scott H. Young",
+    publication: null,
+    title: "Variability, Not Repetition, is the Key to Mastery",
+    desc: "Bruce Lee is reported to have said, “I fear not the man who has practiced 10,000 kicks once, but the man who has practiced one kick 10,000...",
+    date: "Oct 26",
+    readTime: "7 min",
+    topic: "Health",
+  },
+  {
+    author: "Paul A. DeStefano",
+    publication: "Human Parts",
+    title: "What I Overheard as an Escape Room Actor",
+    desc: "Lock a group of people in a room and you’ll witness some surprising confessions",
+    date: "Jan 18, 2020",
+    readTime: "6 min",
+    topic: "Experiences",
+  },
+  {
+    author: "Kim Scott",
+    publication: null,
+    title: "6 Steps for Setting Measurable Goals to Avoid “Productivity Paranoia”",
+    desc: "With more people working in remote and hybrid environments than ever before, company, team and individual goals must be explicit and…",
+    date: "Oct 24",
+    readTime: "6 min",
+    topic: "Health",
+  },
+];
+
+const discoverTags = [
+  "Programming",
+  "Data Science",
+  "Technology",
+  "Self Improvement",
+  "Writing",
+  "Relationships",
+  "Machine Learning",
+  "Productivity",
+  "Politics",
+];
+
+const trendingList = document.getElementById("trending-list");
+
+const renderTrendingArticles = () => {
+  let html = "";
+  for (const article of trendingArticles) {
+    html += `
+    <div class="trending-list">
+    <p class="number-of-item">0${article.id}</p>
+          <div>
+            <span
+              ><img src="" alt="" />
+              <p class="trending-item-writer">${article.author}</p
+            ></span>
+            ${article.publication ? `<p class="trending-item-title">${article.publication}</p>` : ""}
+            <div>
+              <p class="date">${article.date}</p>
+              <p class="read-time">${article.readTime}</p>
+            </div>
+          </div> 
+          </div> `;
+  }
+  trendingList.innerHTML = html;
+};
+
+const articleList = document.getElementById("article-list");
+
+const renderFeaturedArticles = () => {
+  let html = "";
+  for (const article of featuredArticles) {
+    html += `
+        <div class="article-item">
+            <div class="article-text">
+              <span
+                ><img src="" alt="" />
+                <p class="article-writer">${article.author}</p
+              ></span>
+              <h6 class="article-title">${article.title}</h6>
+              <p class="article-desc">${article.desc}</p>
+              <div>
+                <p class="date">${article.date}</p>
+                <p class="read-time">${article.readTime}</p>
+                <p class="tag">${article.topic}</p>
+                <img src="" alt="" class="star-img" />
+                <img src="" alt="" class="bookmark-img" />
+              </div>
+            </div>
+            <img src="" alt="" class="article-img" />
+          </div>
+
+        `;
+  }
+  articleList.innerHTML = html;
+};
+
+const discoverTagsList = document.getElementById("discover-tags-list");
+
+const renderDiscoverTags = () => {
+  html = "";
+  for (const tag of discoverTags) {
+    html += `<p class="discover-tag">${tag}</p>
+`;
+  }
+};
+
+document.addEventListener("DOMContentLoaded", renderTrendingArticles());
+renderFeaturedArticles();
