@@ -64,6 +64,8 @@ const featuredArticles = [
     date: "Oct 27",
     readTime: "5 min",
     topic: "Aging",
+    authorImage: "image07.jpeg",
+    featImage: "image08.jpeg",
   },
   {
     author: "Taru Anniina Liikanen",
@@ -73,6 +75,8 @@ const featuredArticles = [
     date: "Oct 24",
     readTime: "6 min",
     topic: "Health",
+    authorImage: "image09.jpeg",
+    featImage: "image10.jpeg",
   },
   {
     author: "David Rodenas, Ph. D.",
@@ -82,6 +86,8 @@ const featuredArticles = [
     date: "Oct 15",
     readTime: "5 min",
     topic: "Software Engineering",
+    authorImage: "image11.jpeg",
+    featImage: "image12.png",
   },
   {
     author: "Microsoft Design",
@@ -91,6 +97,8 @@ const featuredArticles = [
     date: "Oct 25",
     readTime: "11 min",
     topic: "Sustainability",
+    authorImage: "image13.png",
+    featImage: "image14.png",
   },
   {
     author: "Scott H. Young",
@@ -100,6 +108,8 @@ const featuredArticles = [
     date: "Oct 26",
     readTime: "7 min",
     topic: "Health",
+    authorImage: "image15.jpeg",
+    featImage: "image16.jpg",
   },
   {
     author: "Paul A. DeStefano",
@@ -109,6 +119,8 @@ const featuredArticles = [
     date: "Jan 18, 2020",
     readTime: "6 min",
     topic: "Experiences",
+    authorImage: "image17.png",
+    featImage: "image18.jpeg",
   },
   {
     author: "Kim Scott",
@@ -118,6 +130,8 @@ const featuredArticles = [
     date: "Oct 24",
     readTime: "6 min",
     topic: "Health",
+    authorImage: "image19.jpeg",
+    featImage: "image20.jpg",
   },
 ];
 
@@ -163,23 +177,25 @@ const renderFeaturedArticles = () => {
   let html = "";
   for (const article of featuredArticles) {
     html += `
+    
         <div class="article-item">
             <div class="article-text">
-              <span
-                ><img src="" alt="" />
-                <p class="article-writer">${article.author}</p
-              ></span>
+              <p class="article-writer"
+                ><img src="./assets/imgs/${article.authorImage}" alt="${article.author} picture" />
+                <span>${article.author}</span></p
+              >
               <h6 class="article-title">${article.title}</h6>
               <p class="article-desc">${article.desc}</p>
-              <div>
-                <p class="date">${article.date}</p>
-                <p class="read-time">${article.readTime}</p>
-                <p class="tag">${article.topic}</p>
-                <img src="" alt="" class="star-img" />
-                <img src="" alt="" class="bookmark-img" />
+              <div class="article-specs ">
+                <p class="gray-text">${article.date}\&nbsp;·\&nbsp;
+                ${article.readTime}\&nbsp;·\&nbsp;
+               <span class="tag"> ${article.topic}</span> </p>
+               <img src="./assets/imgs/svg/star.svg" alt="star icon" class="star-img" />
+                
+                <img src="./assets/imgs/svg/bookmark.svg" alt="bookmark icon" class="bookmark-img " />
               </div>
             </div>
-            <img src="" alt="" class="article-img" />
+            <img src="./assets/imgs/${article.featImage}" alt="featured article image" class="article-img" />
           </div>
 
         `;
@@ -188,6 +204,7 @@ const renderFeaturedArticles = () => {
 };
 
 const discoverTagsList = document.getElementById("discover-tags-list");
+console.log(discoverTagsList);
 
 const renderDiscoverTags = () => {
   html = "";
@@ -195,7 +212,9 @@ const renderDiscoverTags = () => {
     html += `<p class="discover-tag">${tag}</p>
 `;
   }
+  discoverTagsList.innerHTML = html;
 };
 
-document.addEventListener("DOMContentLoaded", renderTrendingArticles());
+renderTrendingArticles();
 renderFeaturedArticles();
+renderDiscoverTags();

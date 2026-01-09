@@ -43,6 +43,7 @@ button.regular-btn {
   padding: 0.5em 1em;
 }
 
+/* HERO - YELLOW PART */
 .hidden-mobile {
   display: none;
 }
@@ -69,9 +70,10 @@ button.regular-btn {
   border-radius: 30px;
 }
 
+/* SECTION - TRENDING ON MEDIUM */
 section.trending-section {
   padding: 1.5em;
-  margin-right: 2em;
+  border-bottom: solid 2px #eceded;
 }
 
 section.trending-section > p {
@@ -120,6 +122,7 @@ section .trending-item {
 .gray-text {
   opacity: 0.4;
 }
+
 .trending-item-title {
   font-weight: 600;
   font-size: 1.4rem;
@@ -130,6 +133,107 @@ section .trending-item {
   font-weight: 500;
 }
 
+/* ARTICLE - DISCOVER SECTION */
+
+article {
+  margin-top: 3em;
+  padding-inline: 1.5em;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+
+article > div {
+  order: 1;
+}
+h5 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 1.5px;
+}
+#discover-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.discover-tag {
+  border: 1px solid #c0bebdb2;
+  padding: 0.75em 1.25em;
+  color: #878380dc;
+  font-weight: 600;
+}
+.featured-articles-wrapper {
+  order: 1;
+}
+
+article ul {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  padding-top: 3em;
+  margin-top: 3em;
+  border-top: solid 2px #d3d3d3;
+  flex-wrap: wrap;
+  margin-right: 2em;
+}
+
+.article-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+  padding-block: 1em;
+}
+.article-item > img {
+  width: 200px;
+  height: auto;
+  align-self: center;
+}
+
+.article-writer {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.article-writer img {
+  border-radius: 50%;
+  width: 30px;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.article-text {
+  position: relative;
+  width: 100%;
+}
+
+.article-specs {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+
+  gap: 0.5em;
+}
+.bookmark-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.tag {
+  background-color: lightgray;
+  border-radius: 20px;
+  padding: 6px 10px;
+}
+/* MEDIA QUERIES */
 @media screen and (min-width: 576px) {
   .hidden-mobile {
     display: block;
@@ -149,7 +253,8 @@ section .trending-item {
 @media screen and (min-width: 1200px) {
   header,
   .hero,
-  section.trending-section {
+  section.trending-section,
+  article {
     padding-inline: 15em;
   }
   .trending-item-text {
@@ -161,5 +266,25 @@ section .trending-item {
 
   section.trending-section {
     margin-right: 0;
+  }
+
+  article ul {
+    padding-top: 3em;
+    margin-top: 3em;
+    border-top: solid 2px #d3d3d3;
+    flex-wrap: wrap;
+    max-width: 425px;
+  }
+
+  article > div {
+    width: 40%;
+    order: 2;
+  }
+  article {
+    flex-direction: row;
+  }
+
+  .featured-articles-wrapper {
+    width: 65%;
   }
 }
