@@ -5,6 +5,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header img {
@@ -17,11 +20,16 @@ button {
 }
 h1 {
   font-family: "Spectral", serif;
+  font-size: 5rem;
 }
 
 .header-btns-wrapper {
   display: flex;
   gap: 1em;
+}
+
+button {
+  cursor: pointer;
 }
 button.invisible-btn {
   border: none;
@@ -33,23 +41,125 @@ button.regular-btn {
   color: white;
   border-radius: 20px;
   padding: 0.5em 1em;
-  margin-left: 1em;
 }
 
 .hidden-mobile {
-  visibility: hidden;
+  display: none;
 }
+.hero {
+  height: 400px;
+  background-color: #ffc017;
+  border-bottom: solid 1px black;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.hero-text button.regular-btn {
+  justify-self: flex-start;
+  font-size: 1.15rem;
+  padding-inline: 1.75em;
+  border-radius: 30px;
+}
+
+section.trending-section {
+  padding: 1.5em;
+  margin-right: 2em;
+}
+
+section.trending-section > p {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+section.trending-section > p > img {
+  height: 40px;
+}
+
+section #trending-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+section .trending-item {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.number-of-item {
+  align-self: baseline;
+  font-size: 40px;
+  font-weight: 900;
+  opacity: 0.2;
+  margin-right: 0.5em;
+}
+
+.trending-item p img {
+  border-radius: 50%;
+  margin-right: 0.5em;
+  width: 25px;
+}
+
+.trending-item-writer {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75em;
+}
+
+.gray-text {
+  opacity: 0.4;
+}
+.trending-item-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding-block: 0.5em;
+}
+
+.trending-specs {
+  font-weight: 500;
+}
+
 @media screen and (min-width: 576px) {
   .hidden-mobile {
-    visibility: visible;
+    display: block;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .trending-item {
+    display: flex;
+    width: 33%;
+  }
+  section #trending-list {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  header {
+  header,
+  .hero,
+  section.trending-section {
     padding-inline: 15em;
+  }
+  .trending-item-text {
+    margin-right: 2em;
+  }
+  section .trending-item {
+    width: 33%;
+  }
+
+  section.trending-section {
+    margin-right: 0;
   }
 }

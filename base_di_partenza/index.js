@@ -6,6 +6,7 @@ const trendingArticles = [
     title: "Ukraine War, 23 October 2022",
     date: "Oct 23, 2022",
     readTime: "5 min",
+    image: "image01.jpeg",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const trendingArticles = [
     title: "Comeback",
     date: "Oct 26, 2022",
     readTime: "24 min",
+    image: "image02.png",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const trendingArticles = [
     title: "How I Learned to Love My Breasts Even Though One Is A Horcrux For Voldemort",
     date: "Oct 26, 2022",
     readTime: "2 min",
+    image: "image03.jpeg",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const trendingArticles = [
     title: "The Night Paul McCartney Donned a Disguise at Fillmore East",
     date: "Oct 22, 2022",
     readTime: "3 min",
+    image: "image04.png",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const trendingArticles = [
     title: "5 Python Projects to Automate Your Life: From Beginner to Advanced",
     date: "Oct 13, 2022",
     readTime: "6 min",
+    image: "image05.jpeg",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const trendingArticles = [
     title: "How To Make Visual Studio Code Look Amazing",
     date: "Oct 20, 2022",
     readTime: "7 min",
+    image: "image06.png",
   },
 ];
 
@@ -133,20 +139,20 @@ const renderTrendingArticles = () => {
   let html = "";
   for (const article of trendingArticles) {
     html += `
-    <div class="trending-list">
-    <p class="number-of-item">0${article.id}</p>
-          <div>
-            <span
-              ><img src="" alt="" />
-              <p class="trending-item-writer">${article.author}</p
-            ></span>
-            ${article.publication ? `<p class="trending-item-title">${article.publication}</p>` : ""}
-            <div>
-              <p class="date">${article.date}</p>
-              <p class="read-time">${article.readTime}</p>
+    <div class="trending-item">
+        <p class="number-of-item">0${article.id}</p>
+        <div class="trending-item-text">
+            <p class="trending-item-writer"
+                ><img src="./assets/imgs/${article.image}" alt="article thumbnail" />
+                <span >${article.author}</span
+            >${article.publication ? `<span class="gray-text">\&nbsp; in  \&nbsp;</span>${article.publication}</span>` : ""}
+            <p class="trending-item-title">${article.title}</p>
+            <div class="trending-specs gray-text"
+                <p>${article.date}\&nbsp;·\&nbsp;${article.readTime}
+                </p>
             </div>
-          </div> 
-          </div> `;
+        </div> 
+    </div> `;
   }
   trendingList.innerHTML = html;
 };
