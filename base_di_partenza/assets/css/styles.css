@@ -8,8 +8,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  /* animation of navbar */
   transition: background-color 300ms ease, box-shadow 300ms ease;
 }
+
+/*  M animation - transition */
+/* svg .m {
+  transition: opacity 0.4s ease;
+} */
 
 header.white {
   background-color: white;

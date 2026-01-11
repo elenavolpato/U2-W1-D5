@@ -215,12 +215,26 @@ const renderDiscoverTags = () => {
   discoverTagsList.innerHTML = html;
 };
 
+/* animation of top navbar */
 const triggerPoint = 480;
-
 const navBar = document.getElementById("navBar");
 
 window.addEventListener("scroll", () => {
   navBar.classList.toggle("white", window.scrollY > triggerPoint);
+});
+
+/* M animation */
+
+const ms = document.querySelectorAll("svg .m");
+console.log(ms);
+ms.forEach((m) => {
+  (function loop() {
+    // random visible / invisible
+    m.setAttribute("opacity", Math.random() > 0.5 ? "1" : "0");
+
+    // schedule next change (random delay)
+    setTimeout(loop, 200 + Math.random() * 10000);
+  })();
 });
 
 renderTrendingArticles();
