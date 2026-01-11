@@ -1,6 +1,6 @@
 header {
   background-color: #ffc017;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #191919;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +18,7 @@ header.white {
 }
 
 header.white .regular-btn {
-  background-color: green;
+  background-color: #1a8917;
 }
 
 header img {
@@ -28,6 +28,7 @@ header img {
 body,
 button {
   font-family: "Roboto", sans-serif;
+  color: #191919;
 }
 h1 {
   font-family: "Spectral", serif;
@@ -48,7 +49,7 @@ button.invisible-btn {
 }
 button.regular-btn {
   border: none;
-  background-color: black;
+  background-color: #191919;
   color: white;
   border-radius: 20px;
   padding: 0.5em 1em;
@@ -61,7 +62,7 @@ button.regular-btn {
 .hero {
   height: 400px;
   background-color: #ffc017;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #191919;
   display: flex;
   justify-content: space-between;
   padding: 1.5em;
