@@ -215,6 +215,14 @@ const renderDiscoverTags = () => {
   discoverTagsList.innerHTML = html;
 };
 
+const triggerPoint = 480;
+
+const navBar = document.getElementById("navBar");
+
+window.addEventListener("scroll", () => {
+  navBar.classList.toggle("white", window.scrollY > triggerPoint);
+});
+
 renderTrendingArticles();
 renderFeaturedArticles();
 renderDiscoverTags();

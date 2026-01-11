@@ -8,6 +8,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+
+header.white {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+header.white .regular-btn {
+  background-color: green;
 }
 
 header img {
@@ -33,7 +43,7 @@ button {
 }
 button.invisible-btn {
   border: none;
-  background-color: #ffc017;
+  background-color: transparent;
 }
 button.regular-btn {
   border: none;
